@@ -1,0 +1,66 @@
+.quiz {
+  background-color: bisque;
+  margin: 20px;
+}
+
+.question {
+  padding: 10px;
+  border: 2px solid black;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.input-group {
+  margin: 10px;
+}
+li {
+  padding: 10px;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+.options {
+  padding: 20px;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.input-group-prepend {
+  margin-right: -1px;
+}
+.input-group > .input-group-prepend > .input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .custom-file,
+.input-group > .custom-select,
+.input-group > .form-control,
+.input-group > .form-control-plaintext {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  margin-bottom: 0;
+}
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
