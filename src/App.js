@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     Questions: [],
     QuestionNumber: 0,
+    checked: false,
   };
   count = 0;
   flag = false;
@@ -24,6 +25,14 @@ class App extends Component {
     this.flag = true;
   }
   QuestionHandler = () => {
+    if (this.state.checked === true) {
+      console.log('correct');
+    } else {
+      console.log('wrong');
+    }
+    this.setState({
+      checked: false,
+    });
     if (this.count < 9) {
       this.setState({
         QuestionNumber: (this.count += 1),
