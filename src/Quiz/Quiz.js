@@ -5,6 +5,7 @@ import { InputGroup, FormControl } from 'react-bootstrap';
 const Quiz = (props) => {
   let Q = props.Ques.QuestionNumber;
   return (
+    
     <div className='quiz'>
       <div className='question'>
         <p>
@@ -14,7 +15,7 @@ const Quiz = (props) => {
       <div className='options'>
         <InputGroup>
           <InputGroup.Prepend>
-            <InputGroup.Radio name={'options'} />
+            <InputGroup.Radio value="1" name={'options'} />
           </InputGroup.Prepend>
           <FormControl
             type='text'
