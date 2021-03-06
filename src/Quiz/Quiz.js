@@ -32,6 +32,22 @@ const Quiz = (props) => {
       props.Ques.checked = C_Flag;
     }
   };
+
+  let OptionsComponent = (iD, val, column) => {
+    return (
+      <InputGroup>
+        <InputGroup.Prepend>
+          <InputGroup.Radio
+            onClick={() => Checker(iD)}
+            id={iD}
+            value={val}
+            name={'options'}
+          />
+        </InputGroup.Prepend>
+        <FormControl type='text' value={column} readOnly />
+      </InputGroup>
+    );
+  };
   return (
     
     <div className='quiz'>
@@ -41,50 +57,10 @@ const Quiz = (props) => {
         </p>
       </div>
       <div className='options'>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Radio
-              onClick={() => Checker('one')}
-              id='one'
-              value='1'
-              name={'options'}
-            />
-          </InputGroup.Prepend>
-          <FormControl type='text' value={k.col_3} readOnly />
-        </InputGroup>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Radio
-              onClick={() => Checker('two')}
-              id='two'
-              value='2'
-              name={'options'}
-            />
-          </InputGroup.Prepend>
-          <FormControl type='text' value={k.col_4} readOnly />
-        </InputGroup>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Radio
-              onClick={() => Checker('three')}
-              id='three'
-              value='3'
-              name={'options'}
-            />
-          </InputGroup.Prepend>
-          <FormControl type='text' value={k.col_5} readOnly />
-        </InputGroup>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Radio
-              onClick={() => Checker('four')}
-              id='four'
-              value='4'
-              name={'options'}
-            />
-          </InputGroup.Prepend>
-          <FormControl type='text' value={k.col_6} readOnly />
-        </InputGroup>
+        {OptionsComponent('one', '1', k.col_3)}
+        {OptionsComponent('two', '2', k.col_4)}
+        {OptionsComponent('three', '3', k.col_5)}
+        {OptionsComponent('four', '4', k.col_6)}
       </div>
     </div>
   );
