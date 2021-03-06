@@ -8,26 +8,11 @@ const Quiz = (props) => {
   let C_Flag = props.Ques.checked;
   const Checker = (id) => {
     C_Flag = false;
+    const SelectedAnswer = document.getElementById(id + 1).value;
+    console.log(SelectedAnswer);
     if (document.getElementById(id).checked) {
-      if (id === 'one') {
-        if (k.col_3 === k.col_7) {
-          C_Flag = true;
-        }
-      }
-      if (id === 'two') {
-        if (k.col_4 === k.col_7) {
-          C_Flag = true;
-        }
-      }
-      if (id === 'three') {
-        if (k.col_5 === k.col_7) {
-          C_Flag = true;
-        }
-      }
-      if (id === 'four') {
-        if (k.col_6 === k.col_7) {
-          C_Flag = true;
-        }
+      if (SelectedAnswer === k.col_7) {
+        C_Flag = true;
       }
       props.Ques.checked = C_Flag;
     }
@@ -44,7 +29,7 @@ const Quiz = (props) => {
             name={'options'}
           />
         </InputGroup.Prepend>
-        <FormControl type='text' value={column} readOnly />
+        <FormControl id={iD + 1} type='text' value={column} readOnly />
       </InputGroup>
     );
   };
