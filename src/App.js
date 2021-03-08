@@ -29,6 +29,7 @@ class App extends Component {
         });
       });
   }
+  
   QuestionHandler = () => {
     let n = this.state.count;
     if (this.state.id !== '') {
@@ -91,7 +92,7 @@ class App extends Component {
         )}
         {this.state.count !== 9 ? (
           <button id='button' onClick={this.QuestionHandler}>
-            next
+            Next
           </button>
         ) : (
           <button id='button' onClick={this.showResult}>

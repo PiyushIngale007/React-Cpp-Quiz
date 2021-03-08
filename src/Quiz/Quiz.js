@@ -42,6 +42,7 @@ const Quiz = (props) => {
     );
   };
   return (
+    
     <div className='quiz'>
       <div className='question'>
         <p>
