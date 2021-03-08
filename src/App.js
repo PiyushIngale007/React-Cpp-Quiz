@@ -20,7 +20,7 @@ class App extends Component {
 
   async getData() {
     await axios
-      .get('http://localhost:5000/')
+      .get('https://limitless-scrubland-76769.herokuapp.com/')
       .then((response) => {
         console.log(response.data);
         this.setState({
@@ -92,7 +92,7 @@ class App extends Component {
         )}
         {this.state.count !== 9 ? (
           <button id='button' onClick={this.QuestionHandler}>
-            next
+            Next
           </button>
         ) : (
           <button id='button' onClick={this.showResult}>

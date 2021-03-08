@@ -1,5 +1,5 @@
 .quiz {
-  background-color: #333333;
+  background-color: #252526;
   margin: 20px;
 }
 
@@ -54,6 +54,7 @@ ol {
   flex: 1 1 auto;
   width: 1%;
   min-width: 0;
+  border: 2px solid burlywood;
   margin-bottom: 0;
   background: #1e1e1e;
   color: blanchedalmond;

@@ -1,16 +1,54 @@
 .card {
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 4px 4px 0 blue;
   transition: 0.3s;
+  color: aliceblue;
   width: 80%;
+  background-color: #333333;
   margin: 0 auto;
   padding-bottom: 20px;
   margin-bottom: 30px;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 blueviolet;
 }
 
 .container {
   padding: 2px 16px;
+}
+
+#answer {
+  color: lawngreen;
+}
+
+#score {
+  font-size: xx-large;
+  font-family: cursive;
+  color: aliceblue;
+}
+
+#reset {
+  display:inline-block;
+  padding:0.3em 1.2em;
+  background-color: #4e9af1;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  font-size: large;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+  width: fit-content;
+  height: 50px;
+}
+
+  reset:hover{
+  border-color: rgba(255,255,255,1);
+  box-shadow: 0 8px 16px 0 blueviolet;
+
 }
