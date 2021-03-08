@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background-color: #1e1e1e;
+  height: 684px;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 150px;
   pointer-events: none;
+  left: 5%;
+  position: fixed;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -17,14 +21,16 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1e1e1e;
   min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #bc8f8f;
+  height: 12rem;
+  font-family: Georgia, Times New Roman, Times, serif;
 }
 
 .App-link {
