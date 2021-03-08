@@ -17,7 +17,7 @@ class App extends Component {
 
   async getData() {
     await axios
-      .get('https://limitless-scrubland-76769.herokuapp.com/')
+      .get('http://localhost:5000/')
       .then((response) => {
         console.log(response.data);
         this.setState({
@@ -26,6 +26,7 @@ class App extends Component {
         });
       });
   }
+  
   QuestionHandler = () => {
     if (this.state.checked === true) {
       console.log('correct');
