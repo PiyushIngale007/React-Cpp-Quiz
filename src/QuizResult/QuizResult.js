@@ -1,9 +1,8 @@
 import React from 'react';
 import './QuizResult.css';
-import Quiz from '../Quiz/Quiz';
 
 const QuizResult = (props) => {
-  document.getElementById("button").style.display = "none";
+  document.getElementById('button').style.display = 'none';
   let answerDisplay = (
     <div>
       {props.scorecard.Questions.map((Question, index) => {
@@ -16,7 +15,7 @@ const QuizResult = (props) => {
                     Question {index + 1}: {Question.col_2}
                   </b>
                 </h4>
-                <p id = "answer">Answer : {Question.col_7}</p>
+                <p id='answer'>Answer : {Question.col_7}</p>
               </div>
             </div>
           </div>
@@ -27,14 +26,16 @@ const QuizResult = (props) => {
 
   let resetQuiz = () => {
     window.location.reload(false);
-  }
+  };
   return (
     <div>
-      <div><p id="score">Your Score is: {props.scorecard.score}</p></div>
+      <div>
+        <p id='score'>Your Score is: {props.scorecard.score}</p>
+      </div>
       <div>{answerDisplay}</div>
-      <div>          
+      <div>
         <button id='reset' onClick={resetQuiz}>
-           Reset Quiz
+          Reset Quiz
         </button>
       </div>
     </div>

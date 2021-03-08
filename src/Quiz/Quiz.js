@@ -9,7 +9,6 @@ const Quiz = (props) => {
   const Checker = (id) => {
     C_Flag = false;
     const SelectedAnswer = document.getElementById(id + 1).value;
-    console.log(SelectedAnswer);
     document.getElementById(id).checked = true;
     if (document.getElementById(id).checked) {
       if (SelectedAnswer === k.col_7) {
@@ -42,7 +41,6 @@ const Quiz = (props) => {
     );
   };
   return (
-    
     <div className='quiz'>
       <div className='question'>
         <p>

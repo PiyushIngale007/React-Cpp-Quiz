@@ -22,24 +22,20 @@ class App extends Component {
     await axios
       .get('https://limitless-scrubland-76769.herokuapp.com/')
       .then((response) => {
-        console.log(response.data);
         this.setState({
           flag: true,
           Questions: response.data.data,
         });
       });
   }
-  
+
   QuestionHandler = () => {
     let n = this.state.count;
     if (this.state.id !== '') {
       if (this.state.checked === true) {
-        console.log('correct');
         this.setState({
           score: this.state.score + 1,
         });
-      } else {
-        console.log('wrong');
       }
 
       document.getElementById(this.state.id).checked = false;
