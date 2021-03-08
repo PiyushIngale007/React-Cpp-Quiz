@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './ISO_C++_Logo.svg';
 import axios from '../node_modules/axios';
 
 import './App.css';
 import Quiz from './Quiz/Quiz';
 import Spinner from 'react-bootstrap/Spinner';
+import QuizResult from './QuizResult/QuizResult';
 
 class App extends Component {
   state = {
@@ -12,8 +13,10 @@ class App extends Component {
     QuestionNumber: 0,
     checked: false,
     flag: false,
+    id: '',
+    count: 0,
+    score: 0,
   };
-  count = 0;
 
   async getData() {
     await axios
@@ -27,20 +30,39 @@ class App extends Component {
       });
   }
   QuestionHandler = () => {
-    if (this.state.checked === true) {
-      console.log('correct');
-    } else {
-      console.log('wrong');
-    }
-    this.setState({
-      checked: false,
-    });
-    if (this.count < 9) {
+    let n = this.state.count;
+    if (this.state.id !== '') {
+      if (this.state.checked === true) {
+        console.log('correct');
+        this.setState({
+          score: this.state.score + 1,
+        });
+      } else {
+        console.log('wrong');
+      }
+
+      document.getElementById(this.state.id).checked = false;
       this.setState({
-        QuestionNumber: (this.count += 1),
+        checked: false,
+        id: '',
       });
+      if (this.state.count < 9) {
+        this.setState({
+          QuestionNumber: n + 1,
+          count: n + 1,
+        });
+      }
+    } else {
+      alert('Please Select an option.');
     }
   };
+
+  showResult = () => {
+    this.setState({
+      count: 10,
+    });
+  };
+
   render() {
     if (this.state.flag === false) {
       this.getData();
@@ -54,17 +76,28 @@ class App extends Component {
       <div className='App'>
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
+          <h1>C++ Quiz</h1>
         </header>
-        {this.state.flag ? (
-          <Quiz Ques={this.state} />
-        ) : (
+        {this.state.count < 10 && this.state.flag === true ? (
+          <Quiz id='quiz' Ques={this.state} />
+        ) : this.state.count < 5 ? (
           <div style={spinner}>
             <Spinner animation='border' role='status'>
               <span className='sr-only'>Loading...</span>
             </Spinner>
           </div>
+        ) : (
+          <QuizResult scorecard={this.state} />
         )}
-        <button onClick={this.QuestionHandler}>next</button>
+        {this.state.count !== 9 ? (
+          <button id='button' onClick={this.QuestionHandler}>
+            next
+          </button>
+        ) : (
+          <button id='button' onClick={this.showResult}>
+            Show Result
+          </button>
+        )}
       </div>
     );
   }

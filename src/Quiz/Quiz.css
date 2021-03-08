@@ -1,13 +1,17 @@
 .quiz {
-  background-color: bisque;
+  background-color: #333333;
   margin: 20px;
 }
 
 .question {
   padding: 10px;
-  border: 2px solid black;
+  border: 2px solid blanchedalmond;
   margin-left: 30px;
   margin-right: 30px;
+  background: #1e1e1e;
+  color: blanchedalmond;
+  top: 15px;
+  position: relative;
 }
 .input-group {
   margin: 10px;
@@ -37,8 +41,10 @@ ol {
   margin-right: -1px;
 }
 .input-group > .input-group-prepend > .input-group-text {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  margin-right: 15px;
+  border: 1px solid BLANCHEDALMOND;
+  background: #1e1e1e;
+  border-radius: 0;
 }
 .input-group > .custom-file,
 .input-group > .custom-select,
@@ -49,6 +55,8 @@ ol {
   width: 1%;
   min-width: 0;
   margin-bottom: 0;
+  background: #1e1e1e;
+  color: blanchedalmond;
 }
 .input-group-text {
   display: flex;
