@@ -58,6 +58,7 @@ ol {
   margin-bottom: 0;
   background: #1e1e1e;
   color: blanchedalmond;
+  cursor: pointer;
 }
 .input-group-text {
   display: flex;
@@ -73,4 +74,8 @@ ol {
   background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+}
+
+input {
+  cursor: pointer;
 }
