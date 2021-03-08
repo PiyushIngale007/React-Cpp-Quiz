@@ -10,11 +10,13 @@ const Quiz = (props) => {
     C_Flag = false;
     const SelectedAnswer = document.getElementById(id + 1).value;
     console.log(SelectedAnswer);
+    document.getElementById(id).checked = true;
     if (document.getElementById(id).checked) {
       if (SelectedAnswer === k.col_7) {
         C_Flag = true;
       }
       props.Ques.checked = C_Flag;
+      props.Ques.id = id;
     }
   };
 
@@ -29,7 +31,13 @@ const Quiz = (props) => {
             name={'options'}
           />
         </InputGroup.Prepend>
-        <FormControl id={iD + 1} type='text' value={column} readOnly />
+        <FormControl
+          id={iD + 1}
+          onClick={() => Checker(iD)}
+          type='text'
+          value={column}
+          readOnly
+        />
       </InputGroup>
     );
   };
