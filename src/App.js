@@ -60,11 +60,13 @@ class App extends Component {
     });
   };
 
-  render() {
+  componentDidMount = () => {
     if (this.state.flag === false) {
       this.getData();
     }
+  };
 
+  render() {
     const spinner = {
       height: '300px',
     };
